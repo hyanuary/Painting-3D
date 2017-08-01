@@ -82,7 +82,7 @@ public class paintGM : MonoBehaviour {
                     for (float i = 0; i < length; i += 3)
                     {
                         Vector2 temp = lastMousePos + offset * i;
-                        Vector3 objPosition = Camera.main.ScreenToWorldPoint(new Vector3(temp.x, temp.y, 10.0f));
+                        Vector3 objPosition = Camera.main.ScreenToWorldPoint(new Vector3(temp.x, temp.y, 10));
                         Instantiate(baseDot, objPosition, baseDot.rotation);
                         DrawCircle((int)remap(11.7f, -11.7f, 0, 1024 - 1, objPosition.x), (int)remap(5.77f, -5.77f, 0, 512 - 1, objPosition.y), 5, currentColor);
                         text2d.Apply();
@@ -92,7 +92,7 @@ public class paintGM : MonoBehaviour {
                 }
                 else
                 {
-                    Vector3 objPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 10.0f));
+                    Vector3 objPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 10));
                     Instantiate(baseDot, objPosition, baseDot.rotation);
                     DrawCircle((int)remap(11.7f, -11.7f, 0, 1024 - 1, objPosition.x), (int)remap(5.77f, -5.77f, 0, 512 - 1, objPosition.y), 5, currentColor);
                     text2d.Apply();
