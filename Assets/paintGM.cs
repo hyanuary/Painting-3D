@@ -11,8 +11,7 @@ public class paintGM : MonoBehaviour {
     public static float currentScale = 0.01f;
 
     public Texture2D text2d;
-    public Texture3D text3d;
-
+   
     public GameObject texture1;
 
     Vector2 lastMousePos;
@@ -28,11 +27,10 @@ public class paintGM : MonoBehaviour {
         currentColor = Color.black;
         lastMousePos = new Vector2(-1f, -1f);
         text2d = new Texture2D(1024, 512);
-        text3d = new Texture3D(1024, 512, 1, TextureFormat.RGB24, false);
-        texture1.GetComponent<Renderer>().materials[0].SetTexture("_MainTex", text2d);
+        texture1.GetComponent<Renderer>().material.SetTexture("_MainTex", text2d);
         for (int y = 0; y < 512; y++)
             for (int x = 0; x < 1024; x++)
-                text2d.SetPixel(x, y, Color.white);
+                text2d.SetPixel(x, y, Color.green);
         text2d.Apply();
 
 
@@ -48,7 +46,7 @@ public class paintGM : MonoBehaviour {
         {
             for (int y = 0; y < 512; y++)
                 for (int x = 0; x < 1024; x++)
-                    text2d.SetPixel(x, y, Color.white);
+                    text2d.SetPixel(x, y, Color.green);
             text2d.Apply();
         }
 
